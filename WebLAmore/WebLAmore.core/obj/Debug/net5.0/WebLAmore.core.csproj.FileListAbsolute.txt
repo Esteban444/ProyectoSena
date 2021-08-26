@@ -1,0 +1,15 @@
+D:\PROGRAMACION\ProyectoLAmore\WebLAmore\WebLAmore.core\bin\Debug\net5.0\WebLAmore.Core.deps.json
+D:\PROGRAMACION\ProyectoLAmore\WebLAmore\WebLAmore.core\bin\Debug\net5.0\WebLAmore.Core.runtimeconfig.json
+D:\PROGRAMACION\ProyectoLAmore\WebLAmore\WebLAmore.core\bin\Debug\net5.0\WebLAmore.Core.runtimeconfig.dev.json
+D:\PROGRAMACION\ProyectoLAmore\WebLAmore\WebLAmore.core\bin\Debug\net5.0\WebLAmore.Core.dll
+D:\PROGRAMACION\ProyectoLAmore\WebLAmore\WebLAmore.core\bin\Debug\net5.0\ref\WebLAmore.Core.dll
+D:\PROGRAMACION\ProyectoLAmore\WebLAmore\WebLAmore.core\bin\Debug\net5.0\WebLAmore.Core.pdb
+D:\PROGRAMACION\ProyectoLAmore\WebLAmore\WebLAmore.core\obj\Debug\net5.0\WebLAmore.Core.csproj.AssemblyReference.cache
+D:\PROGRAMACION\ProyectoLAmore\WebLAmore\WebLAmore.core\obj\Debug\net5.0\WebLAmore.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\PROGRAMACION\ProyectoLAmore\WebLAmore\WebLAmore.core\obj\Debug\net5.0\WebLAmore.Core.AssemblyInfoInputs.cache
+D:\PROGRAMACION\ProyectoLAmore\WebLAmore\WebLAmore.core\obj\Debug\net5.0\WebLAmore.Core.AssemblyInfo.cs
+D:\PROGRAMACION\ProyectoLAmore\WebLAmore\WebLAmore.core\obj\Debug\net5.0\WebLAmore.Core.csproj.CoreCompileInputs.cache
+D:\PROGRAMACION\ProyectoLAmore\WebLAmore\WebLAmore.core\obj\Debug\net5.0\WebLAmore.Core.dll
+D:\PROGRAMACION\ProyectoLAmore\WebLAmore\WebLAmore.core\obj\Debug\net5.0\ref\WebLAmore.Core.dll
+D:\PROGRAMACION\ProyectoLAmore\WebLAmore\WebLAmore.core\obj\Debug\net5.0\WebLAmore.Core.pdb
+D:\PROGRAMACION\ProyectoLAmore\WebLAmore\WebLAmore.core\obj\Debug\net5.0\WebLAmore.Core.genruntimeconfig.cache
