@@ -15,7 +15,7 @@ using WebLAmore.Core.Modelos;
 
 namespace WebLAmore.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductosController : ControllerBase

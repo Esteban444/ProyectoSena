@@ -8,10 +8,10 @@ class Logo extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon( Icons.bubble_chart_outlined, color: Color(0xff7A6BF5) ),
+          Icon( Icons.list_alt_outlined,color: Color(0xff7A6BF5) ),
           SizedBox( width: 10 ),
           Text(
-            'Admin',
+            'Administracion',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w200,

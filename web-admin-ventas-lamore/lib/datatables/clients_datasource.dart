@@ -1,30 +1,33 @@
 
 import 'package:flutter/material.dart';
 
-import 'package:admin_dashboard/models/product.dart';
+import 'package:admin_dashboard/models/clients.dart';
 import 'package:admin_dashboard/ui/modals/product_modal.dart';
 
 
-class ProductsDataTableSource extends DataTableSource {
+class ClientsDataTableSource extends DataTableSource {
 
-  final List<Product> products;
+  final List<Clients> clients;
   final BuildContext context;
 
-  ProductsDataTableSource(this.products, this.context);
+  ClientsDataTableSource(this.clients, this.context);
 
 
   @override
   DataRow getRow(int index) {
     
-    dynamic producto = this.products[index];
+    dynamic cliente = this.clients[index];
 
     return DataRow.byIndex(
       index:  index,
       cells: [
-        DataCell(Text(producto.idProducto)),
-        DataCell(Text(producto.nombreProducto)),
-        DataCell(Text(producto.cantidad)),
-        DataCell(Text(producto.precio)),
+        DataCell(Text('idCliente')),
+        DataCell(Text('Documento')),
+        DataCell(Text('Nombres')),
+        DataCell(Text('Apellidos')),
+        DataCell(Text('Direccion')),
+        DataCell(Text('Telefono')),
+        DataCell(Text('Email')),
         DataCell(
 
           Row(
@@ -35,7 +38,7 @@ class ProductsDataTableSource extends DataTableSource {
                    showModalBottomSheet(
                     backgroundColor: Colors.transparent,
                     context: context, 
-                    builder: (_) => ProductsModal(producto: producto,)
+                    builder: (_) => ProductsModal()
                   );
                  },
                ),
@@ -81,7 +84,7 @@ class ProductsDataTableSource extends DataTableSource {
 
   @override
   
-  int get rowCount => products.length;
+  int get rowCount => clients.length;
 
   @override
 

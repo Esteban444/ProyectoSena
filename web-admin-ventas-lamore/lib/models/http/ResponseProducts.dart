@@ -1,8 +1,8 @@
 
 import 'dart:convert';
 
-class ResponseProduct {
-    ResponseProduct({
+class ResponseProducts {
+    ResponseProducts({
         required this.idProducto,
         required this.nombreProducto,
         required this.cantidad,
@@ -14,11 +14,11 @@ class ResponseProduct {
     int cantidad;
     int precio;
 
-    factory ResponseProduct.fromJson(String str) => ResponseProduct.fromMap(json.decode(str));
+    factory ResponseProducts.fromJson(String str) => ResponseProducts.fromMap(json.decode(str));
 
     String toJson() => json.encode(toMap());
 
-    factory ResponseProduct.fromMap(Map<String, dynamic> json) => ResponseProduct(
+    factory ResponseProducts.fromMap(Map<String, dynamic> json) => ResponseProducts(
         idProducto: json["idProducto"],
         nombreProducto: json["nombreProducto"],
         cantidad: json["cantidad"],
@@ -32,3 +32,4 @@ class ResponseProduct {
         "precio": precio,
     };
 }
+

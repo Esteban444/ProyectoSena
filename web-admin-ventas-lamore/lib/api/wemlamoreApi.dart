@@ -1,18 +1,23 @@
 
+
+
 import 'package:dio/dio.dart';
 
 class WebLAmoreApi {
 
-  static Dio _dio = new Dio();
+ static Dio _dio = new Dio();
   
   static void configureDio() {
 
     _dio.options.baseUrl = 'http://localhost:5001/api';
 
+    /*_dio.options.headers = {
+      'x-token': LocalStorage.prefs.getString('token') ?? ''
+    };*/
+
   }
 
   static Future httpGet( String path ) async {
-
     try {
       
       final resp = await _dio.get(path);
@@ -66,4 +71,5 @@ class WebLAmoreApi {
       throw('Error en el Delete');
     }
   }
+  
 }

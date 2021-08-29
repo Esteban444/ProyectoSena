@@ -9,8 +9,9 @@ import 'package:admin_dashboard/ui/layouts/splash/splash_layout.dart';
 import 'package:admin_dashboard/router/router.dart';
 
 import 'package:admin_dashboard/providers/auth_provider.dart';
-import 'package:admin_dashboard/providers/sidemenu_provider.dart';
+import 'package:admin_dashboard/providers/clientesProvider.dart';
 import 'package:admin_dashboard/providers/products_provider.dart';
+import 'package:admin_dashboard/providers/sidemenu_provider.dart';
 
 import 'package:admin_dashboard/services/local_storage.dart';
 import 'package:admin_dashboard/services/navigation_service.dart';
@@ -36,7 +37,9 @@ class AppState extends StatelessWidget {
 
         ChangeNotifierProvider(lazy: false,create: ( _ ) => SideMenuProvider()),
 
-        ChangeNotifierProvider(lazy: false,create: ( _ ) => ProductsProvider())
+        ChangeNotifierProvider(lazy: false,create: ( _ ) => ProductsProvider()),
+
+        ChangeNotifierProvider(lazy: false,create: ( _ ) => ClientsProvider()),
 
       ],
       child: MyApp(),

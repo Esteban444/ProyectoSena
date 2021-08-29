@@ -8,8 +8,6 @@ import 'package:admin_dashboard/datatables/products_datasource.dart';
 import 'package:admin_dashboard/ui/buttons/custom_icon_buttom.dart';
 import 'package:admin_dashboard/ui/modals/product_modal.dart';
 
-//import 'package:admin_dashboard/ui/labels/custom_labels.dart';
-
 
 class ProductsView extends StatefulWidget {
 

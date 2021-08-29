@@ -1,20 +1,19 @@
 
-import 'dart:convert';
 
-import 'dart:html';
+import 'dart:convert';
 
 class Product {
     Product({
-        required this.idProducto,
+        this.idProducto,
         required this.nombreProducto,
         required this.cantidad,
         required this.precio,
     });
 
-    int    idProducto;
+    int? idProducto;
     String nombreProducto;
-    int    cantidad;
-    int    precio;
+    int cantidad;
+    int precio;
 
     factory Product.fromJson(String str) => Product.fromMap(json.decode(str));
 
@@ -33,5 +32,4 @@ class Product {
         "cantidad": cantidad,
         "precio": precio,
     };
-
 }

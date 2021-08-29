@@ -1,16 +1,16 @@
-
 import 'package:flutter/material.dart';
 
 import 'package:admin_dashboard/api/wemlamoreApi.dart';
 
-
-import 'package:admin_dashboard/models/product.dart';
-
+import 'package:admin_dashboard/models/clients.dart';
 
 
-class ProductsProvider extends ChangeNotifier{
 
-  List<Product> products = [];
+
+
+class ClientsProvider extends ChangeNotifier{
+
+  List<Clients> clientes= [];
 
   getproducts() async {
      
@@ -22,22 +22,26 @@ class ProductsProvider extends ChangeNotifier{
     notifyListeners();
   }
 
-  Future newProduct( String name, int cantidad, int precio) async {
+  Future newClient( int documento, String nombre, String apellidos, String direccion , String telefono, String email) async {
     
     final data = {
-      'nombre': name,
-      'cantidad': cantidad,
-      'precio': precio
+      
+        'documento': documento,
+        'nombres': nombre,
+        'apellidos': apellidos,
+        'direccion': direccion,
+        'telefono': telefono,
+        'email': email
     };
 
     try{
-       final json = await WebLAmoreApi.post('/Productos', data);
-       final newproduct = Product.fromMap(json);
-       products.add(newproduct);
+       final json = await WebLAmoreApi.post('/Clientes', data);
+       final newclient = Clients.fromMap(json);
+       clientes.add(newclient);
 
        notifyListeners();
     }catch (e) {
-       throw 'Error al crear el producto.';
+       throw 'Error al crear el cliente.';
     }
   }
 

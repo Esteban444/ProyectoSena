@@ -10,13 +10,13 @@ class Flurorouter {
   static String rootRoute     = '/';
 
   // Auth Router
-  static String loginRoute    = '/auth/login';
-  static String registerRoute = '/auth/register';
+  static String loginRoute    = '/usuarios/login';
+  static String registerRoute = '/usuarios/register';
 
   // Dashboard
   static String clientesRoute = '/clientes';
-  static String pedidosRoute = '/dashboard/pedidos';
-  static String productosRoute = '/dashboard/productos';
+  static String pedidosRoute = '/pedidos';
+  static String productosRoute = '/productos';
 
 
   static void configureRoutes() {

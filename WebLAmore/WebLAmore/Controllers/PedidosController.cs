@@ -14,7 +14,7 @@ using WebLAmore.Core.Interfaces;
 
 namespace WebLAmore.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class PedidosController : ControllerBase

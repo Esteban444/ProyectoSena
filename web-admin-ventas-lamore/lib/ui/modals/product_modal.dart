@@ -1,10 +1,13 @@
 import 'package:admin_dashboard/models/product.dart';
+import 'package:admin_dashboard/providers/products_provider.dart';
+import 'package:admin_dashboard/services/notifications_service.dart';
 import 'package:flutter/material.dart';
 
 
 import 'package:admin_dashboard/ui/labels/custom_labels.dart';
 import 'package:admin_dashboard/ui/inputs/custom_inputs.dart';
 import 'package:admin_dashboard/ui/buttons/custom_outlined_button.dart';
+import 'package:provider/provider.dart';
 
 
 
@@ -44,7 +47,7 @@ class _ProductsModalState extends State<ProductsModal> {
    @override
    Widget build(BuildContext context) {
 
-     //final categoryProvider =  Provider.of<CategoriesProvider>(context, listen: false);
+     final productsProvider =  Provider.of<ProductsProvider>(context, listen: false);
 
      return Container(
        padding: EdgeInsets.symmetric(horizontal: 10 , vertical: 10),
@@ -85,7 +88,7 @@ class _ProductsModalState extends State<ProductsModal> {
 
              TextFormField(
                
-               onChanged: (value) => nombre = value ,
+               onChanged: (value) => cantidad = int.parse(value) ,
                decoration: CustomInputs.loginInputDecoration(
                  hint: 'Cantidad de producto', 
                  label: 'Cantidad', 
@@ -98,7 +101,7 @@ class _ProductsModalState extends State<ProductsModal> {
 
              TextFormField(
                
-               onChanged: (value) => nombre = value ,
+               onChanged: (value) => precio = int.parse(value) ,
                decoration: CustomInputs.loginInputDecoration(
                  hint: 'Precio de producto', 
                  label: 'Precio', 
@@ -113,22 +116,22 @@ class _ProductsModalState extends State<ProductsModal> {
                child: CustomOutlinedButton(
                  onPressed: () async {
 
-                   /*try{
+                   try{
                      if(id == null){
                       //crear
-                      await categoryProvider.newCategory(nombre);
-                      NotificationsService.showSnackbar('$nombre creada.');
+                      await productsProvider.newProduct(nombre, cantidad!, precio!);
+                      NotificationsService.showSnackbar('$nombre creado.');
                     }else{
                       // actualizar
-                      await categoryProvider.updateCategory(id!, nombre);
-                      NotificationsService.showSnackbar('$nombre actualizada.');
+                      //await productsProvider.updateCategory(id!, nombre);
+                      //NotificationsService.showSnackbar('$nombre actualizada.');
                     }
                     Navigator.of(context).pop();
 
                    }catch(e){
                      Navigator.of(context).pop();
-                     NotificationsService.showSnackbarError('No se pude guardar la categoría.');
-                   }*/
+                     NotificationsService.showSnackbarError('No se pude guardar el producto.');
+                   }
                     
                  }, 
                  
