@@ -9,7 +9,7 @@ class WebLAmoreApi {
   
   static void configureDio() {
 
-    _dio.options.baseUrl = 'http://localhost:5001/api';
+    _dio.options.baseUrl = 'https://localhost:5001/api';
 
     /*_dio.options.headers = {
       'x-token': LocalStorage.prefs.getString('token') ?? ''

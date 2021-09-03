@@ -17,7 +17,7 @@ namespace WebLAmore.Infraestructura.Repositorios
         {
             _LAmoreContext = context;
         }
-        public async Task<List<Producto>> ConsultaProductos(BuscarProductos filtro)
+        public async Task<IEnumerable<Producto>> ConsultaProductos(BuscarProductos filtro)
         {
             var productos = await _LAmoreContext.Productos.ToListAsync();
 

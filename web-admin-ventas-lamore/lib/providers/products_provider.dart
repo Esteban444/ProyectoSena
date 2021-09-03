@@ -2,11 +2,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:admin_dashboard/api/wemlamoreApi.dart';
-
+import 'package:admin_dashboard/models/http/ResponseProducts.dart';
 
 import 'package:admin_dashboard/models/product.dart';
-
-
 
 class ProductsProvider extends ChangeNotifier{
 
@@ -14,10 +12,18 @@ class ProductsProvider extends ChangeNotifier{
 
   getproducts() async {
      
-    //final response = await WebLAmoreApi.httpGet('/Productos');
-    //final productsResponse = ResponseProducts.fromMap(response);
+    final List listadoProductos = await WebLAmoreApi.httpGet('/Productos');
+  
+    listadoProductos.forEach((product) {
+
+
+     //final productsFromJson = ResponseProducts.fromMap(product);
+     final productsFromJson = Product.fromMap(product);
+     products.add(productsFromJson);
+     });
     
-    //this.products = [ response];
+    
+    products = products;
     
     notifyListeners();
   }

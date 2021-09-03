@@ -21,10 +21,10 @@ class ProductsDataTableSource extends DataTableSource {
     return DataRow.byIndex(
       index:  index,
       cells: [
-        DataCell(Text(producto.idProducto)),
+        DataCell(Text(producto.idProducto.toString())),
         DataCell(Text(producto.nombreProducto)),
-        DataCell(Text(producto.cantidad)),
-        DataCell(Text(producto.precio)),
+        DataCell(Text(producto.cantidad.toString())),
+        DataCell(Text(producto.precio.toString())),
         DataCell(
 
           Row(

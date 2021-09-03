@@ -8,6 +8,6 @@ namespace WebLAmore.Core.Interfaces
 {
     public interface IRepositorioProductos: IRepositorioBase<Producto>
     {
-        Task<List<Producto>> ConsultaProductos(BuscarProductos filtro);
+        Task<IEnumerable<Producto>> ConsultaProductos(BuscarProductos filtro);
     }
 }
