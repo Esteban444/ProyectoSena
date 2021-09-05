@@ -21,13 +21,13 @@ class ClientsDataTableSource extends DataTableSource {
     return DataRow.byIndex(
       index:  index,
       cells: [
-        DataCell(Text('idCliente')),
-        DataCell(Text('Documento')),
-        DataCell(Text('Nombres')),
-        DataCell(Text('Apellidos')),
-        DataCell(Text('Direccion')),
-        DataCell(Text('Telefono')),
-        DataCell(Text('Email')),
+        DataCell(Text(cliente.idClientes.toString())),
+        DataCell(Text(cliente.documento.toString())),
+        DataCell(Text(cliente.nombres)),
+        DataCell(Text(cliente.apellidos)),
+        DataCell(Text(cliente.direccion)),
+        DataCell(Text(cliente.telefono)),
+        DataCell(Text(cliente.email)),
         DataCell(
 
           Row(
@@ -59,8 +59,8 @@ class ClientsDataTableSource extends DataTableSource {
                         TextButton(
                           child: Text('Si, Borrar'),
                           onPressed: () async {
-                            /*await Provider.of<ProductsProvider>(context, listen: false)
-                             .deleteProduct(producto.id);
+                            /*await Provider.of<ClientsProvider>(context, listen: false)
+                             .deleteClient(cliente.id);
                             Navigator.of(context).pop();*/
                           }, 
                         ),
