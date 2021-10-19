@@ -32,7 +32,7 @@ class _ProductsModalState extends State<ProductsModal> {
 
   String nombre = '';
   int? id;
-  int? cantidad;
+  int? cantidad ;
   int? precio;
 
   @override
@@ -44,12 +44,12 @@ class _ProductsModalState extends State<ProductsModal> {
     cantidad = widget.producto?.cantidad;
     precio  = widget.producto?.precio;
   }
-
+   
    @override
    Widget build(BuildContext context) {
 
      final productsProvider =  Provider.of<ProductsProvider>(context, listen: false);
-
+     
      return Container(
        padding: EdgeInsets.symmetric(horizontal: 10 , vertical: 10),
        height: 600,
@@ -61,7 +61,7 @@ class _ProductsModalState extends State<ProductsModal> {
                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
                  Text(
-                   widget.producto?.nombreProducto ?? 'Nueva Producto', style: CustomLabels.h1.copyWith(color: Colors.white),
+                   widget.producto?.nombreProducto ?? 'Nuevo Producto', style: CustomLabels.h1.copyWith(color: Colors.white),
                  ),
                  IconButton(
                    onPressed: () => Navigator.of(context).pop(), 
@@ -110,22 +110,26 @@ class _ProductsModalState extends State<ProductsModal> {
               ),
               style: TextStyle(color: Colors.white),
              ),
-
+             
              Container(
                margin: EdgeInsets.only(top: 10),
                alignment: Alignment.center,
                child: CustomOutlinedButton(
                  onPressed: () async {
-
+                   final data = {
+                    "NombreProducto": nombre,
+                    "Cantidad": cantidad,
+                    "Precio": precio
+                   };
                    try{
                      if(id == null){
                       //crear
-                      //await productsProvider.newProduct(nombre, cantidad!, precio!);
-                      //NotificationsService.showSnackbar('$nombre creado.');
+                      await productsProvider.newProduct(data);
+                      NotificationsService.showSnackbar('$nombre creado.');
                     }else{
                       // actualizar
-                      //await productsProvider.updateCategory(id!, nombre);
-                      //NotificationsService.showSnackbar('$nombre actualizada.');
+                      await productsProvider.updateProduct(id!, nombre, cantidad!, precio!);
+                      NotificationsService.showSnackbar('$nombre actualizado.');
                     }
                     Navigator.of(context).pop();
 

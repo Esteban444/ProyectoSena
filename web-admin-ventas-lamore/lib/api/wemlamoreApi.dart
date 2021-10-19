@@ -39,8 +39,8 @@ class WebLAmoreApi {
       final resp = await _dio.post(path, data: formData );
       return resp.data;
 
-    } catch (e) {
-      throw('Error en el Post');
+    } on DioError catch (e) {
+      throw('Error en el Post, $e');
     }
   }
 

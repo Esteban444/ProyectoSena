@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:admin_dashboard/providers/products_provider.dart';
 
 import 'package:admin_dashboard/models/product.dart';
 import 'package:admin_dashboard/ui/modals/product_modal.dart';
@@ -56,9 +58,9 @@ class ProductsDataTableSource extends DataTableSource {
                         TextButton(
                           child: Text('Si, Borrar'),
                           onPressed: () async {
-                            /*await Provider.of<ProductsProvider>(context, listen: false)
-                             .deleteProduct(producto.id);
-                            Navigator.of(context).pop();*/
+                            await Provider.of<ProductsProvider>(context, listen: false)
+                             .deleteProduct(producto.idProducto);
+                            Navigator.of(context).pop();
                           }, 
                         ),
                      ]
