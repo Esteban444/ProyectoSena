@@ -1,5 +1,7 @@
 
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
 import 'package:admin_dashboard/api/wemlamoreApi.dart';
@@ -31,38 +33,39 @@ class ProductsProvider extends ChangeNotifier{
       "cantidad": cantidad,
       "precio": precio
     };*/
-
+    final dataj = json.decode(data);
     try{
     
-      final json = await WebLAmoreApi.post('/Productos', data);
+      final json = await WebLAmoreApi.post('/Productos', dataj);
       final newproduct = Product.fromMap(json);
       products.add(newproduct);
 
       notifyListeners();
     }catch (e) {
+      print(e);
        throw 'Error al crear el producto.';
     }
   }
    
-  Future updateProduct( int id, String name, int cantidad, int precio) async {
+  Future updateProduct( int id, data) async {
     
-    final data = {
+    /*final data = {
       "nombreProducto": name,
       "cantidad": cantidad,
       "precio": precio
-    };
+    };*/
 
-
+    final dataj = json.decode(data);
     try{
-     await WebLAmoreApi.put('/Productos/$id', data);
+     await WebLAmoreApi.put('/Productos/$id', dataj);
 
       this.products = this.products.map(
          (product) {
            if(product.idProducto != id) return product;
 
-           product.nombreProducto = name;
-           product.cantidad = cantidad;
-           product.precio = precio;
+           product.nombreProducto = data.name;
+           product.cantidad = data.cantidad;
+           product.precio = data.precio;
            return product;
          }
        ).toList();
@@ -70,7 +73,7 @@ class ProductsProvider extends ChangeNotifier{
       notifyListeners();
 
     }catch (e) {
-       throw 'Eror al actulizar la producto';
+       throw 'Error al actulizar la producto';
     }
   }
   

@@ -88,7 +88,7 @@ class _ProductsModalState extends State<ProductsModal> {
              SizedBox(height: 10),
 
              TextFormField(
-               
+               //initialValue: widget.producto?.cantidad ,
                onChanged: (value) => cantidad = int.parse(value) ,
                decoration: CustomInputs.loginInputDecoration(
                  hint: 'Cantidad de producto', 
@@ -101,7 +101,7 @@ class _ProductsModalState extends State<ProductsModal> {
              SizedBox(height: 10),
 
              TextFormField(
-               
+               //initialValue: widget.producto?.precio ,
                onChanged: (value) => precio = int.parse(value) ,
                decoration: CustomInputs.loginInputDecoration(
                  hint: 'Precio de producto', 
@@ -116,10 +116,11 @@ class _ProductsModalState extends State<ProductsModal> {
                alignment: Alignment.center,
                child: CustomOutlinedButton(
                  onPressed: () async {
-                   final data = {
-                    "NombreProducto": nombre,
-                    "Cantidad": cantidad,
-                    "Precio": precio
+                   
+                  final data = {
+                    "nombre": nombre,
+                    "cantidad": cantidad,
+                    "precio": precio
                    };
                    try{
                      if(id == null){
@@ -128,7 +129,7 @@ class _ProductsModalState extends State<ProductsModal> {
                       NotificationsService.showSnackbar('$nombre creado.');
                     }else{
                       // actualizar
-                      await productsProvider.updateProduct(id!, nombre, cantidad!, precio!);
+                      await productsProvider.updateProduct(id!, data);
                       NotificationsService.showSnackbar('$nombre actualizado.');
                     }
                     Navigator.of(context).pop();
